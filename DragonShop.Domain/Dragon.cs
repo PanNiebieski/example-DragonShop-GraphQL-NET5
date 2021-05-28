@@ -32,7 +32,7 @@ namespace DragonShop.Domain
 
         public string Name { get; set; }
 
-        public ColorDragon Color { get; set; }
+        public WhatColors Color { get; set; }
 
         public WhatBreath Breath { get; set; }
 

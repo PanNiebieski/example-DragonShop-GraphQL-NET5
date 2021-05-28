@@ -1,6 +1,6 @@
 ﻿namespace DragonShop.Domain
 {
-    public enum ColorDragon
+    public enum WhatColors
     {
         Red,
         Yellow,

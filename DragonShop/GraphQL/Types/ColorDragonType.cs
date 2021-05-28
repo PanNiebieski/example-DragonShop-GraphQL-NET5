@@ -3,7 +3,7 @@ using GraphQL.Types;
 
 namespace DragonShop.Api.GraphQL.Types
 {
-    public class ColorDragonType : EnumerationGraphType<ColorDragon>
+    public class ColorDragonType : EnumerationGraphType<WhatColors>
     {
         public ColorDragonType()
         {
