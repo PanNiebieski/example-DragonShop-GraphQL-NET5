@@ -1,16 +1,22 @@
 ﻿using DragonShop.Api.GraphQL;
 using DragonShop.Infrastructure.Persitence;
 using GraphQL.Server;
+using GraphQL.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace DragonShop.Api
 {
+
+
     public class Startup
     {
         public IConfiguration Configuration { get; }
+
+
 
         public Startup(IConfiguration configuration)
         {
@@ -27,8 +33,17 @@ namespace DragonShop.Api
 
             services.AddScoped<DragonSchema>();
 
-            services.AddGraphQL(o => { })
-                .AddGraphTypes(ServiceLifetime.Scoped)
+            services.AddGraphQL((o, p) =>
+           {
+               var logger = p.GetRequiredService<ILogger<Startup>>();
+               o.UnhandledExceptionDelegate = ctx =>
+                   logger.LogError("{Error} occurred", ctx.OriginalException.Message);
+
+           })
+
+             .AddGraphTypes(ServiceLifetime.Scoped)
+             .AddUserContextBuilder(httpContext => new GraphQLUserContext { User = httpContext.User })
+             .AddDataLoader()
              .AddNewtonsoftJson();
 
             // If using Kestrel:

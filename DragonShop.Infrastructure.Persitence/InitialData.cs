@@ -12,10 +12,20 @@ namespace DragonShop.Infrastructure.Persitence
             {
                 dbContext.Dragons.Add(new Dragon
                 {
-                    Name = "Mountain Walkers",
-                    Description = "Use these sturdy shoes to pass any mountain range with ease.",
+                    Name = "John",
+                    Description = "Stron.",
                     Price = 219.5m,
                     Rating = 4,
+                    Color = WhatColors.Green,
+                    Age = 30,
+                    OrbitDurationYears = 20,
+                    DryMassKg = 4330,
+                    DiameterMeters = 100,
+                    Active = true,
+                    Breath = WhatBreath.None,
+                    CrewCapacity = 20,
+                    DoneFirstFlight = true,
+                    HeightInMeters = 30,
                     IntroducedAt = DateTimeOffset.Now.AddMonths(-1)
                 });
 

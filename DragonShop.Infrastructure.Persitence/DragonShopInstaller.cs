@@ -12,6 +12,7 @@ namespace DragonShop.Infrastructure.Persitence
             services.AddDbContext<DragonShopDbContext>(options =>
     options.UseSqlite(_config["ConnectionStrings:DragonDB"]));
             services.AddScoped<DragonRepository>();
+            services.AddScoped<DragonExpertOpinionRepository>();
 
             return services;
         }

@@ -1,5 +1,6 @@
 ﻿using DragonShop.Infrastructure.Persitence;
 using GraphQL.Types;
+using System;
 
 namespace DragonShop.Api.GraphQL
 {
@@ -8,14 +9,12 @@ namespace DragonShop.Api.GraphQL
     {
         private readonly DragonShopDbContext _dbContext;
 
-        public DragonSchema(DragonShopDbContext dbContext) : base()
+        public DragonSchema(DragonShopDbContext dbContext, IServiceProvider sp) : base(sp)
         {
             _dbContext = dbContext;
 
             Query = new DragonQuery
                (new DragonRepository(_dbContext));
         }
-
-
     }
 }
