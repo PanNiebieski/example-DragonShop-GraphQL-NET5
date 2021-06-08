@@ -16,11 +16,14 @@ namespace DragonShop.Api.GraphQL
                 { Name = "id" }),
                 resolve: context =>
                 {
-                    var user = (GraphQLUserContext)context.UserContext;
-
-                    if (user.User.Identity.Name == "Cez") { }
-
                     var id = context.GetArgument<int>("id");
+                    if (id >= 3)
+                        context.Errors.Add(new ExecutionError("Id is wrong"));
+
+                    //var user = (GraphQLUserContext)context.UserContext;
+                    //if (user.User.Identity.Name == "Cez") { }
+
+
                     return dragonRepository.GetOne(id);
                 }
             );

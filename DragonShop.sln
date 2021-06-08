@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonShop.Api", "DragonShop\DragonShop.Api.csproj", "{21907912-4466-49F3-8E4E-95B55536DF52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonShop.Api", "DragonShop\DragonShop.Api.csproj", "{21907912-4466-49F3-8E4E-95B55536DF52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonShop.Domain", "DragonShop.Domain\DragonShop.Domain.csproj", "{389EC10B-1D68-42D8-ADD2-BCF27C44AF5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonShop.Domain", "DragonShop.Domain\DragonShop.Domain.csproj", "{389EC10B-1D68-42D8-ADD2-BCF27C44AF5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonShop.Infrastructure.Persitence", "DragonShop.Infrastructure.Persitence\DragonShop.Infrastructure.Persitence.csproj", "{2E7ACFA9-A41C-4BDC-B2CC-543780105772}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonShop.Infrastructure.Persitence", "DragonShop.Infrastructure.Persitence\DragonShop.Infrastructure.Persitence.csproj", "{2E7ACFA9-A41C-4BDC-B2CC-543780105772}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{2AF2ABC6-D0B0-4254-B50B-76E71A52B836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonShop.Website", "DragonShop.Website\DragonShop.Website.csproj", "{06084026-1E39-4CF5-817A-463438157753}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{2E7ACFA9-A41C-4BDC-B2CC-543780105772}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E7ACFA9-A41C-4BDC-B2CC-543780105772}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E7ACFA9-A41C-4BDC-B2CC-543780105772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06084026-1E39-4CF5-817A-463438157753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06084026-1E39-4CF5-817A-463438157753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06084026-1E39-4CF5-817A-463438157753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06084026-1E39-4CF5-817A-463438157753}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06084026-1E39-4CF5-817A-463438157753} = {2AF2ABC6-D0B0-4254-B50B-76E71A52B836}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3036C3C4-A43D-4AF0-8E57-4B070FE24563}

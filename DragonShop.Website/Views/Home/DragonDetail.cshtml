@@ -1,0 +1,38 @@
+﻿@model DragonShop.Website.Models.DragonContainer;
+
+<div class="row">
+    <div class="col-9">
+        <div class="row">
+            <div class="col-12">
+                <h3>@Model.Dragon.Name</h3>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                @Model.Dragon.Description
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-3">
+                In store since: @Model.Dragon.IntroducedAt.Year
+            </div>
+            <div class="col-3">
+                Stars: @Model.Dragon.Rating
+            </div>
+            <div class="col-3">
+                Price: $@Model.Dragon.Price
+            </div>
+        </div>
+        <h6>Reviews:</h6>
+        <ul></ul>
+        @foreach (var op in Model.Dragon.Opinions)
+        {
+<div class="row">
+    <div class="col-12"><h5>@op.Title</h5></div>
+</div>
+                <div class="row mb-2">
+                    <div class="col-12">@op.Review</div>
+                </div>}
+        <ul></ul>6
+    </div>
+</div>

@@ -14,14 +14,16 @@ namespace DragonShop.Infrastructure.Persitence
             _dbContext = dbContext;
         }
 
-        public Task<Dragon> GetOne(int id)
+        public async Task<Dragon> GetOne(int id)
         {
-            return _dbContext.Dragons.SingleAsync(p => p.Id == id);
+            var r = await _dbContext.Dragons.FirstOrDefaultAsync(p => p.Id == id);
+            return r;
         }
 
-        public Task<List<Dragon>> GetAll()
+        public async Task<List<Dragon>> GetAll()
         {
-            return _dbContext.Dragons.ToListAsync();
+            var r = await _dbContext.Dragons.ToListAsync();
+            return r;
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿@model List<DragonShop.Website.Models.DragonModel>
+
+<div class="row">
+    <h4 class="mb-3 ml-5">Dragons that you can buy:</h4>
+</div>
+
+@foreach (var dragon in Model)
+{
+<div class="row">
+    <div class="col-2 my-auto">@dragon.Name</div>
+    <div class="col-2 my-auto">@dragon.Color</div>
+    <div class="col-2 my-auto">@dragon.Breath</div>
+    <div class="col-2 my-auto">$@dragon.Price</div>
+    <div class="col-2 my-auto stars">
+        @for (var i = 0; i < @dragon.Rating; i++)
+        {
+<text>*</text>}
+    </div>
+
+</div>}
